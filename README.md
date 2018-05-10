@@ -27,3 +27,7 @@
 
 ### Run Application
     python manage.py runserver --settings=car_dealer.settings.{env}
+
+### Start Coding
+#### Launch Editor
+    pipenv run atom .

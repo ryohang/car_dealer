@@ -6,7 +6,7 @@
 	pipenv install
 #### activate
     pipenv shell
-	
+
 ### Local Dev Environment
 #### spin up database from docker
 	docker pull postgres
@@ -16,8 +16,11 @@
 ##### copy to generate local database property and fill in the information
 	cp car_dealer/settings/local-template.py car_dealer/settings/local.py
 
+##### generate migration
+	python manage.py makemigrations dealer --name [migration_name]
+
 ##### apply migration
-	python manage.py makemigration
+  	python manage.py migrate
 
 ### Run Application
     python manage.py runserver --settings=car_dealer.settings.{env}

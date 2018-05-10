@@ -1,4 +1,4 @@
-###Install dependency
+### Install dependency
 ##### pre-requisite: install pipenv
     brew install pipenv
 #### dependency
@@ -19,5 +19,5 @@
 ##### apply migration
 	python manage.py makemigration
 
-###Run Application
+### Run Application
     python manage.py runserver --settings=car_dealer.settings.{env}

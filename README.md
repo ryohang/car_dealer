@@ -4,3 +4,12 @@
 #### dependency
 	sh setEnv.sh
 	pipenv install
+#### activate
+    pipenv shell
+	
+### Local Dev Environment
+#### database
+
+	docker pull postgres
+
+	docker run --name dealerDB -e POSTGRES_DB=dealer -e POSTGRES_USER=admin -e POSTGRES_PASSWORD=password -p 5432:5432 -d postgres

@@ -12,9 +12,6 @@ class Car(models.Model):
     created_time = models.DateTimeField(auto_now_add=True)
     updated_time = models.DateTimeField(auto_now_add=True)
 
-    def __init__(self, brand, year):
-        self.brand = brand
-        self.year = year
-
     class Meta:
         db_table = 'cars'
+        ordering = ["brand"]

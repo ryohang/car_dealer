@@ -22,5 +22,8 @@
 ##### apply migration
   	python manage.py migrate
 
+##### seed test data
+    python manage.py loaddata dealer/fixtures/\*.json
+
 ### Run Application
     python manage.py runserver --settings=car_dealer.settings.{env}

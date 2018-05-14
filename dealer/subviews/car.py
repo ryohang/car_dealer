@@ -4,7 +4,7 @@ from rest_framework.response import Response
 from dealer.models import Car
 from dealer.serializers import CarSerializer
 
-class Car(mixins.ListModelMixin,generics.GenericAPIView):
+class CarList(mixins.ListModelMixin,generics.GenericAPIView):
     queryset = Car.objects.all()
     serializer_class = CarSerializer
 
@@ -13,6 +13,13 @@ class Car(mixins.ListModelMixin,generics.GenericAPIView):
 
     def post(self, request, *args, **kwargs):
         return self.create(request, *args, **kwargs)
+
+class Car(mixins.RetrieveModelMixin,generics.GenericAPIView):
+    queryset = Car.objects.all()
+    serializer_class = CarSerializer
+
+    def get(self, request, *args, **kwargs):
+        return self.retrieve(request, *args, **kwargs)
 
     # def get(self, request, format=None):
     #     cars = Car.objects.all()
